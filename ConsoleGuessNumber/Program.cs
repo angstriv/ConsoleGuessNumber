@@ -33,7 +33,7 @@
                     continue;
                 }
             }
-            
+
             //用户开始猜数字
             while (true)
             {
@@ -56,14 +56,16 @@
                     continue;
 
                 }
-                else if(difference == 0)
+                else if (difference == 0)
                 {
                     Console.WriteLine("恭喜你,猜对了!");
                     break;
-                } 
+                }
             }
 
-
+            //执行完程序暂停
+            Console.Write("按任意键退出...");
+            Console.ReadKey();
 
         }
     }
