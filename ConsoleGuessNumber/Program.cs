@@ -37,11 +37,26 @@
             //用户开始猜数字
             while (true)
             {
-                //获取用户输入的数字
-                Console.Write("请输入想猜的数字:");
-                string input = Console.ReadLine();
-                double inputNumber = Convert.ToDouble(input);
+                double inputNumber = 0;//用户输入的数字
+                
 
+                //获取用户输入的数字
+                while(true)
+                {
+                    //检测数字是否合法
+                    try
+                    {
+                        Console.Write("请输入想猜的数字:");
+                        inputNumber = Convert.ToDouble(Console.ReadLine());
+                        break;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("数字不合法");
+                        continue;
+                    }
+                }
+                
                 //比较2个数
                 double difference = inputNumber - answerNumber;
                 if (difference > 0)//inputNumber > answerNumbe
@@ -62,6 +77,7 @@
                     break;
                 }
             }
+
 
             //执行完程序暂停
             Console.Write("按任意键退出...");
